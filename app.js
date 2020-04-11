@@ -11,6 +11,150 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+var team = [];
+
+retrieveUserData();
+
+function retrieveUserData() {
+
+
+    console.log("Please build your team");
+
+    // Inquire about manager
+    addManager();
+
+
+}
+
+function addManager() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is your manager's name"
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is your manager's id?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is your manager's email?"
+        },
+        {
+            type: "input",
+            name: "officeNum",
+            message: "What is your manager's office number?"
+        },
+
+    ]).then(function (manager) {
+        // Create New Manage Instance
+        let newManager = new Manager(manager.name, manager.id, manager.email, manager.officeNum);
+        // Add Manager to Team
+        team.push(newManager);
+
+        addTeamMember();
+    })
+}
+
+function addTeamMember() {
+    inquirer.prompt([
+        {
+            type: "list",
+            name: "type",
+            message: "Which type of team member would you like to add? (Use arrow keys)",
+            choices: ["Engineer", "Intern", "I don't want to add any more team members"]
+        }
+    ]).then(function (teamMember) {
+        if (teamMember.type === "Engineer") {
+            addEngineer();
+        }
+        if (teamMember.type === "Intern") {
+            addIntern();
+        }
+        if (teamMember.type === "I don't want to add any more team members") {
+            // end
+            console.log(team);
+            // var htmlBlock = render(team);
+
+            // fs.writeFile("team.html", htmlBlock, function (error, data) {
+            //     console.log("written to README");
+            // })
+            return;
+        }
+    })
+}
+
+function addEngineer() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is your engineer's name"
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is your engineer's id?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is your engineer's email?"
+        },
+        {
+            type: "input",
+            name: "github",
+            message: "What is your engineer's GitHub username?"
+        },
+    ]).then(function (engineer) {
+        // Create New Engineer Instance
+        let newEngineer = new Engineer(engineer.name, engineer.id, engineer.email, engineer.github);
+        // Add Engineer to Team
+        team.push(newEngineer);
+
+        addTeamMember();
+
+    })
+}
+
+function addIntern() {
+    inquirer.prompt([
+        {
+            type: "input",
+            name: "name",
+            message: "What is your intern's name"
+        },
+        {
+            type: "input",
+            name: "id",
+            message: "What is your intern's id?"
+        },
+        {
+            type: "input",
+            name: "email",
+            message: "What is your intern's email?"
+        },
+        {
+            type: "input",
+            name: "school",
+            message: "What is your intern's school?"
+        },
+    ]).then(function (intern) {
+        // Create New Intern Instance
+        let newIntern = new Intern(intern.name, intern.id, intern.email, intern.school);
+        // Add Intern to Team
+        team.push(newIntern);
+
+        addTeamMember();
+
+    })
+}
+
+
+
 
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)
