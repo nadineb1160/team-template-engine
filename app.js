@@ -1,4 +1,3 @@
-const Employee = require("./lib/Employee");
 const Manager = require("./lib/Manager");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
@@ -77,11 +76,18 @@ function addTeamMember() {
         if (teamMember.type === "I don't want to add any more team members") {
             // end
             console.log(team);
-            // var htmlBlock = render(team);
 
-            // fs.writeFile("team.html", htmlBlock, function (error, data) {
-            //     console.log("written to README");
-            // })
+            var htmlBlock = render(team);
+
+            fs.writeFile(outputPath, htmlBlock, function (error, data) {
+
+                if(error) {
+                    throw error;
+                }
+
+                console.log("Completed team roster");
+
+            })
             return;
         }
     })
