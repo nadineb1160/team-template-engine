@@ -25,27 +25,62 @@ function retrieveUserData() {
 
 }
 
+function checkString(answer) {
+
+    if (answer !== "" && typeof answer === "string") {
+        return true;
+    }
+    return "Please type in at least one character";
+
+}
+
+function checkNumber(answer) {
+    // Match returns if number
+    const pass = answer.match(/^[0-9]\d*$/);
+
+    if (pass) {
+        return true;
+    }
+    return "Please type a valid number";
+    
+}
+
+function checkEmail(answer) {
+    // Match to email "john@gmail.com"
+    const pass = answer.match(/\S+@\S+\.\S+/);
+
+    if (pass) {
+        return true;
+    }
+    return "Please type a valid email";
+}
+
+
 function addManager() {
     inquirer.prompt([
         {
             type: "input",
             name: "name",
-            message: "What is your manager's name"
+            message: "What is your manager's name",
+            validate: checkString
         },
         {
             type: "input",
             name: "id",
-            message: "What is your manager's id?"
+            message: "What is your manager's id?",
+            validate: checkNumber
         },
         {
             type: "input",
             name: "email",
-            message: "What is your manager's email?"
+            message: "What is your manager's email?",
+            validate: checkEmail
         },
         {
             type: "input",
             name: "officeNum",
-            message: "What is your manager's office number?"
+            message: "What is your manager's office number?",
+            validate: checkNumber
         },
 
     ]).then(function (manager) {
@@ -74,14 +109,13 @@ function addTeamMember() {
             addIntern();
         }
         if (teamMember.type === "I don't want to add any more team members") {
-            // end
             console.log(team);
 
             var htmlBlock = render(team);
 
             fs.writeFile(outputPath, htmlBlock, function (error, data) {
 
-                if(error) {
+                if (error) {
                     throw error;
                 }
 
@@ -98,22 +132,26 @@ function addEngineer() {
         {
             type: "input",
             name: "name",
-            message: "What is your engineer's name"
+            message: "What is your engineer's name",
+            validate: checkString
         },
         {
             type: "input",
             name: "id",
-            message: "What is your engineer's id?"
+            message: "What is your engineer's id?",
+            validate: checkNumber
         },
         {
             type: "input",
             name: "email",
-            message: "What is your engineer's email?"
+            message: "What is your engineer's email?",
+            validate: checkEmail
         },
         {
             type: "input",
             name: "github",
-            message: "What is your engineer's GitHub username?"
+            message: "What is your engineer's GitHub username?",
+            validate: checkString
         },
     ]).then(function (engineer) {
         // Create New Engineer Instance
@@ -131,22 +169,26 @@ function addIntern() {
         {
             type: "input",
             name: "name",
-            message: "What is your intern's name"
+            message: "What is your intern's name",
+            validate: checkString
         },
         {
             type: "input",
             name: "id",
-            message: "What is your intern's id?"
+            message: "What is your intern's id?",
+            validate: checkNumber
         },
         {
             type: "input",
             name: "email",
-            message: "What is your intern's email?"
+            message: "What is your intern's email?",
+            validate: checkEmail
         },
         {
             type: "input",
             name: "school",
-            message: "What is your intern's school?"
+            message: "What is your intern's school?",
+            validate: checkString
         },
     ]).then(function (intern) {
         // Create New Intern Instance
