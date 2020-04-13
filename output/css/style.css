@@ -1,3 +1,15 @@
+.team-heading {
+    background-color: #ff6e40;
+}
+
+.employee-card {
+    margin-right: 10px;
+}
+
 .card-header {
-    background-color: aqua;
+    background-color: #ff9e80;
+}
+
+a {
+    color: #bf360c;
 }
