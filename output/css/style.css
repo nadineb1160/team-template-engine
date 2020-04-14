@@ -18,14 +18,14 @@ a {
     color: #bf360c;
 }
 
-.container :nth-child(1).row .team-area {
+.team-area {
     background-color: #eeeeee;
 }
 
-.container :nth-child(2).row .team-area {
-    background-color: #ffffff;
-}
-
-.container :nth-child(3).row .team-area {
-    background-color: #eeeeee;
+.employee-title {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+    margin-left: 0;
+    /* justify-content: left; */
+    
 }
