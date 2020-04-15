@@ -3,13 +3,11 @@ This is a software engineering team generator command line application. It is bu
 >Technologies:
 Node, Javascript, HTML, CSS, Bootstrap
 ## Table of Contents
-#
 - [Installation](#installation)
 - [Usage](#usage)
 - [Tests](#tests)
 - [Authors](#authors)
 ## Getting Started
-#
 ### Installation:
 ```
 npm install
@@ -25,21 +23,19 @@ node app.js
 ```
 Then answer the given prompts:
 
-![CL Demo](demo/Cl_demo.gif)
+![CL Demo](/demo/Cl_demo.gif)
 
 The HTML will then be created. To view the team roster open team.html in the browser:
 
-![Website Demo](demo/demo.gif)
+![Website Demo](/demo/demo.gif)
 
 
 ## Tests
-#
 ```
 npm run test
 ```
 
 ## Authors
-#
 Nadine Bundschuh
 
 - Github: nadineb1160
