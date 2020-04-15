@@ -6,7 +6,6 @@ Node, Javascript, HTML, CSS, Bootstrap
 #
 - [Installation](#installation)
 - [Usage](#usage)
-- [Deployment](#deployment)
 - [Tests](#tests)
 - [Authors](#authors)
 ## Getting Started
