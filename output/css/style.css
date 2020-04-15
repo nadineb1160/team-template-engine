@@ -10,8 +10,9 @@
   margin: 10px;
 }
 
-.card-header, .team-heading {
-    color: white;
+.card-header,
+.team-heading {
+  color: white;
 }
 
 .team-area {
@@ -26,27 +27,26 @@
 }
 
 .manager .card .card-header {
-    background-color: #FC4A1A; 
-    /* #ff8f00; */
+  background-color: #fc4a1a;
 }
 .manager a {
-    color: hsl(13, 97%, 40%);
+  color: hsl(13, 97%, 40%);
 }
 
 .engineer .card .card-header {
-    background-color: #4ABDAC;
+  background-color: #4abdac;
 }
 
 .engineer a {
-    color: hsl(171, 47%, 40%);
+  color: hsl(171, 47%, 40%);
 }
 
 .intern .card .card-header {
-    background-color: #F7B733;
+  background-color: #f7b733;
 }
 
 .intern a {
-    color: hsl(40, 92%, 40%);
+  color: hsl(40, 92%, 40%);
 }
 
 @media only screen and (max-width: 600px) {
