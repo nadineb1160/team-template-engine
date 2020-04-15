@@ -1,5 +1,5 @@
 .team-heading {
-  background-color: #b71c1c;
+  background-color: #424242;
 }
 
 /* .employee-card {
@@ -26,26 +26,27 @@
 }
 
 .manager .card .card-header {
-    background-color: #ff8f00;
+    background-color: #FC4A1A; 
+    /* #ff8f00; */
 }
 .manager a {
-    color: #ffa000;
+    color: hsl(13, 97%, 40%);
 }
 
 .engineer .card .card-header {
-    background-color: #006064;
+    background-color: #4ABDAC;
 }
 
 .engineer a {
-    color: #00acc1;
+    color: hsl(171, 47%, 40%);
 }
 
 .intern .card .card-header {
-    background-color: #ef5350;
+    background-color: #F7B733;
 }
 
 .intern a {
-    color: #ef9a9a;
+    color: hsl(40, 92%, 40%);
 }
 
 @media only screen and (max-width: 600px) {
