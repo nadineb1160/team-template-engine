@@ -26,11 +26,11 @@ node app.js
 ```
 Then answer the given prompts:
 
-![CL Demo](Cl_demo.gif)
+![CL Demo](demo/Cl_demo.gif)
 
 The HTML will then be created. To view the team roster open team.html in the browser:
 
-![Website Demo](demo.gif)
+![Website Demo](demo/demo.gif)
 
 
 ## Tests
