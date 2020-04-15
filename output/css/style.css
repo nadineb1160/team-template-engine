@@ -1,31 +1,55 @@
 .team-heading {
-    background-color: #ff6e40;
+  background-color: #b71c1c;
 }
 
-.employee-card {
-    margin-right: 10px;
-}
-
-.card-header {
-    background-color: #ff9e80;
-}
+/* .employee-card {
+  margin-right: 10px;
+} */
 
 .card {
-    margin: 10px;
+  margin: 10px;
 }
 
-a {
-    color: #bf360c;
+.card-header, .team-heading {
+    color: white;
 }
 
 .team-area {
-    background-color: #eeeeee;
+  background-color: #eeeeee;
 }
 
 .employee-title {
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    margin-left: 0;
-    /* justify-content: left; */
-    
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin-left: 0;
+  /* justify-content: left; */
+}
+
+.manager .card .card-header {
+    background-color: #ff8f00;
+}
+.manager a {
+    color: #ffa000;
+}
+
+.engineer .card .card-header {
+    background-color: #006064;
+}
+
+.engineer a {
+    color: #00acc1;
+}
+
+.intern .card .card-header {
+    background-color: #ef5350;
+}
+
+.intern a {
+    color: #ef9a9a;
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 100%;
+  }
 }
